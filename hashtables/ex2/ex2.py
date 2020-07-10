@@ -21,7 +21,6 @@ def reconstruct_trip(tickets, length):
     flight_dict = {}
 
     start = None
-    end = None
 
     for tick in tickets:
         flight_dict[tick.source] = tick.destination

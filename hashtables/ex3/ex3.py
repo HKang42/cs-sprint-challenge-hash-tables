@@ -4,6 +4,22 @@ def intersection(arrays):
     """
     # Your code here
 
+    num_dict = {}
+
+    for sublist in arrays:
+
+        for num in sublist:
+            if num in num_dict:
+                num_dict[num] += 1
+            else:
+                num_dict[num] = 1
+    
+    result = []
+
+    for number in num_dict:
+        if num_dict[number] >= 2:
+            result.append(number)
+
     return result
 
 
