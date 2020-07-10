@@ -4,8 +4,9 @@ def intersection(arrays):
     """
     # Your code here
 
+    # Loop through each subarray in arrays
+    # Add every number as a key to our dictionary. Value is a counter.
     num_dict = {}
-
     for sublist in arrays:
 
         for num in sublist:
@@ -16,6 +17,7 @@ def intersection(arrays):
     
     result = []
 
+    # Loop through dictionary and record numbers with a value (count) >= 2
     for number in num_dict:
         if num_dict[number] >= 2:
             result.append(number)
