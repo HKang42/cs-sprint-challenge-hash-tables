@@ -17,9 +17,11 @@ def intersection(arrays):
     
     result = []
 
-    # Loop through dictionary and record numbers with a value (count) >= 2
+    # Loop through dictionary and record numbers with a value (count) >= number of lists
     for number in num_dict:
-        if num_dict[number] >= 2:
+        
+        if num_dict[number] >= len(arrays):
+        # if num_dict[number] >= 2:   <- this code passes the test file when it shouldn't.....  
             result.append(number)
 
     return result
@@ -33,3 +35,20 @@ if __name__ == "__main__":
     arrays.append(list(range(3000000, 4000000)) + [1, 2, 3])
 
     print(intersection(arrays))
+
+
+    ## Proper test case for checking intersection
+    ## Will check for instances where a number appears 2 or more times, but does not appear in all lists
+
+    # q = [
+    #     [1, 2],
+    #     [1, 2],
+    #     [2   ]
+    #     ]   
+
+    # print("Input array:")
+    # for sublist in q:
+    #     print(sublist)
+
+    # print("\nExpected:\t", [2])
+    # print("Intersection:\t", intersection(q))
